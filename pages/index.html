@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Financeiro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-[#1e1e1e] text-white flex flex-col md:flex-row h-screen overflow-hidden">
+
+    <nav class="w-full md:w-28 flex-shrink-0 bg-[#121212] border-t md:border-t-0 md:border-r border-[#2a2a2a] flex flex-row md:flex-col items-center md:pt-4 fixed bottom-0 left-0 right-0 md:relative h-16 md:h-full z-50 justify-around md:justify-start">
+
+        <img src="../images/logoPigmon.png" alt="Logo Pigmon" title="Logo Pigmon" loading="lazy"
+            class="hidden md:block w-28 h-28 object-contain mb-6">
+
+        <div class="flex flex-row md:flex-col items-center justify-around md:justify-start gap-2 md:gap-6 w-full px-2 md:px-4 h-full md:h-auto">
+            <a href="#" class="p-3 rounded-xl hover:bg-neutral-800 transition text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-table-columns text-lg md:text-xl"></i>
+            </a>
+            <a href="#" class="p-3 rounded-xl hover:bg-neutral-800 transition text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-building-columns text-lg md:text-xl"></i>
+            </a>
+            <a href="#" class="p-3 rounded-xl bg-[#0BCE6F] text-white shadow-[0_0_20px_rgba(11,206,111,0.4)] w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                <i class="fa-solid fa-calendar-days text-lg md:text-xl"></i>
+            </a>
+            <a href="#" class="p-3 rounded-xl hover:bg-neutral-800 transition text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-bullseye text-lg md:text-xl"></i>
+            </a>
+            <a href="#" class="p-3 rounded-xl hover:bg-neutral-800 transition text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-bell text-lg md:text-xl"></i>
+            </a>
+            <a href="#" class="hidden md:block p-3 rounded-xl hover:bg-neutral-800 transition text-neutral-400 hover:text-white mt-2">
+                <i class="fa-solid fa-gear text-xl"></i>
+            </a>
+        </div>
+
+        <div class="hidden md:flex mt-auto w-full relative flex-col items-center justify-end h-56 pb-6 z-10">
+            <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#0BCE6F] to-transparent opacity-80 pointer-events-none -z-10"></div>
+            
+            <img src="https://i.pravatar.cc/100?img=12" alt="Imagem de perfil" title="Imagem de perfil" loading="lazy"
+                class="w-12 h-12 object-cover rounded-full shadow-lg mb-2">
+            
+            <div class="text-center">
+                <h2 id="username" class="text-[13px] font-bold text-white leading-tight">Vinícius</h2>
+                <h4 id="cargo" class="text-[10px] text-neutral-200">Dev Back-end</h4>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 overflow-y-auto p-4 md:p-8 lg:p-12 pb-24 md:pb-12">
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 w-full gap-4 md:gap-6">
+            <div>
+                <h1 class="text-2xl md:text-4xl font-bold">
+                    Calendário financeiro
+                </h1>
+                <h4 class="text-base md:text-lg text-neutral-400 mt-1">
+                    Abril - 2026
+                </h4>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 md:gap-6 mt-2 md:mt-0">
+                <div class="flex items-center gap-2 text-xs md:text-sm font-semibold">
+                    <span class="w-4 h-4 md:w-5 md:h-5 rounded-sm bg-[#ff6b6b] inline-block"></span>
+                    Pendente
+                </div>
+                <div class="flex items-center gap-2 text-xs md:text-sm font-semibold">
+                    <span class="w-4 h-4 md:w-5 md:h-5 rounded-sm bg-[#0BCE6F] inline-block"></span>
+                    Pago
+                </div>
+                <div class="flex items-center gap-2 text-xs md:text-sm font-semibold">
+                    <span class="w-4 h-4 md:w-5 md:h-5 rounded-sm bg-[#4ca0ff] inline-block"></span>
+                    Avulso
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full overflow-x-auto pb-4 md:pb-0">
+            <div class="min-w-[500px] md:min-w-0">
+                <div class="grid grid-cols-7 mb-2 md:mb-3 text-neutral-400 text-xs md:text-sm font-semibold text-center">
+                    <h6>Dom</h6>
+                    <h6>Seg</h6>
+                    <h6>Ter</h6>
+                    <h6>Qua</h6>
+                    <h6>Qui</h6>
+                    <h6>Sex</h6>
+                    <h6>Sab</h6>
+                </div>
+
+                <div class="grid grid-cols-7 gap-1 md:gap-3 w-full">
+                    <div class="card-dia"></div>
+                    <div class="card-dia"></div>
+                    <div class="card-dia">1</div>
+                    <div class="card-dia">2</div>
+                    <div class="card-dia">3</div>
+                    <div class="card-dia">4</div>
+                    <div class="card-dia">5</div>
+                    
+                    <div class="card-dia">6</div>
+                    <div class="card-dia">7</div>
+                    <div class="card-dia">8</div>
+                    <div class="card-dia">9</div>
+                    <div class="card-dia">10</div>
+                    <div class="card-dia">11</div>
+                    <div class="card-dia">12</div>
+                    
+                    <div class="card-dia">
+                        13
+                        <div class="card-compromisso bg-[#0BCE6F]">Academia</div>
+                    </div>
+                    <div class="card-dia">14</div>
+                    <div class="card-dia">15</div>
+                    <div class="card-dia">
+                        16
+                        <div class="card-compromisso bg-[#4ca0ff]">Televisão</div>
+                    </div>
+                    <div class="card-dia">17</div>
+                    <div class="card-dia">18</div>
+                    <div class="card-dia">19</div>
+                    
+                    <div class="card-dia">20</div>
+                    <div class="card-dia">21</div>
+                    <div class="card-dia">22</div>
+                    <div class="card-dia">23</div>
+                    <div class="card-dia">24</div>
+                    <div class="card-dia">25</div>
+                    <div class="card-dia">26</div>
+                    <div class="card-dia">27</div>
+                    <div class="card-dia">
+                        28
+                        <div class="card-compromisso bg-[#ff6b6b]">Parcela Moto</div>
+                    </div>
+                    <div class="card-dia">
+                        29
+                        <div class="card-compromisso bg-[#ff6b6b]">Netflix</div>
+                    </div>
+                    <div class="card-dia">30</div>
+                    <div class="card-dia"></div>
+                    <div class="card-dia"></div>
+                    <div class="card-dia"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-end gap-3 md:gap-4 mt-6 md:mt-8 w-full">
+            <button class="w-full sm:w-auto bg-[#0BCE6F] hover:bg-green-500 transition cursor-pointer text-white font-bold rounded-lg px-6 py-3 text-center">
+                <i class="fa-solid fa-circle-minus mr-2"></i>Registrar gasto
+            </button>
+            <button class="w-full sm:w-auto bg-[#0BCE6F] hover:bg-green-500 transition cursor-pointer text-white font-bold rounded-lg px-6 py-3 text-center">
+                <i class="fa-solid fa-circle-plus mr-2"></i>Adicionar conta
+            </button>
+        </div>
+    </main>
+
+</body>
+
+</html>

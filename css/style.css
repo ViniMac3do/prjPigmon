@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-dia {
+    height: 85px;
+    background-color: #3f3f46;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.card-dia:empty {
+    background-color: rgba(63, 63, 70, 0.4);
+}
+
+.card-compromisso {
+    padding-top: 50%;
+    width: 100%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .card-dia {
+        height: 110px;
+    }
+    .card-compromisso {
+        font-size: 0.65rem;
+        padding: 0.125rem;
+    }
+}
